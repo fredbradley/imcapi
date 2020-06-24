@@ -1,0 +1,42 @@
+{
+    "name": "fredbradley/imcapi",
+    "description": "My awesome package",
+    "keywords": [
+        "",
+        "imcapi"
+    ],
+    "homepage": "https://github.com/fredbradley/imcapi",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fred Bradley",
+            "email": "code@fredbradley.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FredBradley\\IMCAPI\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FredBradley\\IMCAPI\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
