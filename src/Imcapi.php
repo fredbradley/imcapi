@@ -4,6 +4,7 @@ namespace FredBradley\IMCAPI;
 
 use FredBradley\IMCAPI\Traits\Devices;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 class Imcapi
 {
@@ -29,7 +30,6 @@ class Imcapi
         ]);
     }
 
-
     /**
      * @param string $method
      * @param string $uri
@@ -47,12 +47,18 @@ class Imcapi
         array $options = [],
         bool $decode = true
     ) {
-        $response = $this->client->request($method, $uri, array_merge([
-            'json' => $json,
-            'query' => $query
-        ], $options));
-
+        try {
+            $response = $this->client->request($method, $uri, array_merge([
+                'json' => $json,
+                'query' => $query
+            ], $options));
+        } catch (RequestException $exception) {
+            $json = json_encode([
+                "error" => $exception->getMessage(),
+                "status_code" => $exception->getCode()
+            ]);
+            return $decode ? json_decode($json, true) : $json;
+        }
         return $decode ? json_decode((string)$response->getBody(), true) : (string)$response->getBody();
     }
-
 }

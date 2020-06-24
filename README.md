@@ -1,8 +1,6 @@
 # PHP Wrapper for the HPE Intelligent Management Center API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/fredbradley/imcapi.svg?style=flat-square)](https://packagist.org/packages/fredbradley/imcapi)
-[![Build Status](https://img.shields.io/travis/fredbradley/imcapi/master.svg?style=flat-square)](https://travis-ci.org/fredbradley/imcapi)
-[![Quality Score](https://img.shields.io/scrutinizer/g/fredbradley/imcapi.svg?style=flat-square)](https://scrutinizer-ci.com/g/fredbradley/imcapi)
 [![Total Downloads](https://img.shields.io/packagist/dt/fredbradley/imcapi.svg?style=flat-square)](https://packagist.org/packages/fredbradley/imcapi)
 
 You can find more information about the HPE IMC here: https://support.hpe.com/hpesc/public/docDisplay?docId=emr_na-c05367573
