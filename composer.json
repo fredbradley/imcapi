@@ -1,9 +1,13 @@
 {
     "name": "fredbradley/imcapi",
-    "description": "My awesome package",
+    "description": "PHP JSON API wrapper for the HPE IMC software to manage network switches",
     "keywords": [
-        "",
-        "imcapi"
+        "network monitoring",
+        "network management",
+        "intelligent management center",
+        "hpe",
+        "imc",
+        "api"
     ],
     "homepage": "https://github.com/fredbradley/imcapi",
     "license": "MIT",
