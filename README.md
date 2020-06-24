@@ -16,10 +16,15 @@ composer require fredbradley/imcapi
 ```
 
 ## Usage
-
+This project is still very much a work in progress. The intention is that more default methods will be added.  
 ``` php
-// Usage description here
+$imc = new \FredBradley\IMCAPI\Imcapi("http://mydomain.tld:8080/imcrs/", "username", "pa55w0rd");
+
+$listDevices = $imc->getDevices();
+$anyOtherRequest = $imc->request('/endpoint');
 ```
+
+You can see a list of valid endpoints on your device: http://mydomain.tld:8080/imcrs
 
 ### Testing
 
@@ -47,7 +52,3 @@ If you discover any security related issues, please email code@fredbradley.uk in
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## PHP Package Boilerplate
-
-This package was generated using the [PHP Package Boilerplate](https://laravelpackageboilerplate.com).
