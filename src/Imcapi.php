@@ -16,29 +16,30 @@ class Imcapi
     protected $client;
 
     /**
-     * Guzzle Constructor
+     * Guzzle Constructor.
      */
     public function __construct(string $base_uri, string $username, string $password)
     {
         $this->client = new Client(
             [
-            'base_uri' => $base_uri,
-            'auth' => [$username, $password, 'digest'],
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Accept' => 'application/json',
-            ],
+                'base_uri' => $base_uri,
+                'auth'     => [$username, $password, 'digest'],
+                'headers'  => [
+                    'Content-Type' => 'application/json',
+                    'Accept'       => 'application/json',
+                ],
             ]
         );
     }
 
     /**
-     * @param  string $method
-     * @param  string $uri
-     * @param  array  $json
-     * @param  array  $query
-     * @param  array  $options
-     * @param  bool   $decode
+     * @param string $method
+     * @param string $uri
+     * @param array  $json
+     * @param array  $query
+     * @param array  $options
+     * @param bool   $decode
+     *
      * @return mixed|string
      */
     public function request(
@@ -55,8 +56,8 @@ class Imcapi
                 $uri,
                 array_merge(
                     [
-                    'json' => $json,
-                    'query' => $query,
+                        'json'  => $json,
+                        'query' => $query,
                     ],
                     $options
                 )
@@ -64,14 +65,14 @@ class Imcapi
         } catch (RequestException $exception) {
             $json = json_encode(
                 [
-                "error" => $exception->getMessage(),
-                "status_code" => $exception->getCode(),
+                    'error'       => $exception->getMessage(),
+                    'status_code' => $exception->getCode(),
                 ]
             );
 
             return $decode ? json_decode($json, true) : $json;
         }
 
-        return $decode ? json_decode((string)$response->getBody(), true) : (string)$response->getBody();
+        return $decode ? json_decode((string) $response->getBody(), true) : (string) $response->getBody();
     }
 }
