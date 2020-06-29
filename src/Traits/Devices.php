@@ -6,10 +6,11 @@ trait Devices
 {
     /**
      *
+     * @return void
      */
     public function getDevices()
     {
-        $response = $this->request(
+        return $this->request(
             'GET',
             'plat/res/device',
             [],
@@ -24,8 +25,5 @@ trait Devices
             ]
         );
 
-        foreach ($response[ 'device' ] as $device) {
-            dump($device);
-        }
     }
 }
