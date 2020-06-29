@@ -5,7 +5,6 @@ namespace FredBradley\IMCAPI\Traits;
 trait Devices
 {
     /**
-     *
      * @return void
      */
     public function getDevices()
@@ -16,14 +15,13 @@ trait Devices
             [],
             [
                 'resPrivilegeFilter' => false,
-                'start' => 0,
-                'size' => 2000,
-                'orderBy' => 'id',
-                'desc' => false,
-                'total' => false,
-                'exact' => false,
+                'start'              => 0,
+                'size'               => 2000,
+                'orderBy'            => 'id',
+                'desc'               => false,
+                'total'              => false,
+                'exact'              => false,
             ]
         );
-
     }
 }
