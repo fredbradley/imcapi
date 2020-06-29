@@ -26,8 +26,8 @@ class Imcapi
             'auth' => [$username, $password, 'digest'],
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Accept' => 'application/json'
-            ]
+                'Accept' => 'application/json',
+            ],
             ]
         );
     }
@@ -56,7 +56,7 @@ class Imcapi
                 array_merge(
                     [
                     'json' => $json,
-                    'query' => $query
+                    'query' => $query,
                     ],
                     $options
                 )
@@ -65,11 +65,13 @@ class Imcapi
             $json = json_encode(
                 [
                 "error" => $exception->getMessage(),
-                "status_code" => $exception->getCode()
+                "status_code" => $exception->getCode(),
                 ]
             );
+
             return $decode ? json_decode($json, true) : $json;
         }
+
         return $decode ? json_decode((string)$response->getBody(), true) : (string)$response->getBody();
     }
 }

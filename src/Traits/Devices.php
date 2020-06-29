@@ -20,7 +20,7 @@ trait Devices
                 'orderBy' => 'id',
                 'desc' => false,
                 'total' => false,
-                'exact' => false
+                'exact' => false,
             ]
         );
 
