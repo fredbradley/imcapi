@@ -5,14 +5,13 @@ namespace FredBradley\IMCAPI\Traits;
 trait Devices
 {
     /**
-     * @return void
+     * @return object
      */
-    public function getDevices()
+    public function getDevices(): object
     {
         return $this->request(
             'GET',
             'plat/res/device',
-            [],
             [
                 'resPrivilegeFilter' => false,
                 'start'              => 0,
